@@ -8,7 +8,7 @@
                 <el-checkbox v-model="state.train" label="Train" style="margin: 0px 10px 10px 0"></el-checkbox>
                 </div>
 
-                <div v-if="(state.train).length === 1">{{ 4 * state.samplePercentTrain }} images will be import</div>
+                <div v-if="(state.train).length === 1">{{ 6.7 * state.samplePercentTrain }} images will be import</div>
 
                 <div v-if="(state.train).length === 1">
                   <sly-field title="Set sample (%) for train dataset" style="margin: 15px 10px 0 0">
@@ -20,7 +20,7 @@
           <sly-card>
                 <el-checkbox v-model="state.test" label="Test" style="margin: 5px 10px 10px 0"></el-checkbox>
 
-                <div v-if="(state.test).length === 1">{{ Math.round(0.5 * state.samplePercentTest) }} images will be import</div>
+                <div v-if="(state.test).length === 1">{{ Math.round(3.31 * state.samplePercentTest) }} images will be import</div>
 
                 <div  v-if="(state.test).length === 1">
                   <sly-field title="Set sample (%) for test dataset" style="margin: 15px 10px 0 0">
