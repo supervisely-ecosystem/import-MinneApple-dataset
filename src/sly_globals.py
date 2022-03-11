@@ -54,6 +54,7 @@ anns_folder = 'masks'
 img_size = (1280, 720)
 batch_size = 3
 class_name = 'apple'
+train_ds = 'Train'
 
 obj_class = sly.ObjClass(class_name, sly.Bitmap)
 obj_class_collection = sly.ObjClassCollection([obj_class])
