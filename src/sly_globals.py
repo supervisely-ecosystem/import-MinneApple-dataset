@@ -20,16 +20,11 @@ logger = sly.logger
 train_ds = os.environ["modal.state.train"]
 test_ds = os.environ["modal.state.test"]
 
-# train_ds = 'Train' #TODO for debug
-# test_ds = 'Test' #TODO for debug
-
 datasets = []
 
 for ds in [train_ds, test_ds]:
     if len(ds) != 2:
         datasets.append(ds[1:-1].replace('\'', ''))
-
-# datasets = ['Train', 'Test'] #TODO for debug
 
 if len(datasets) == 0:
     logger.warn('You have not selected a dataset to import')
@@ -37,9 +32,6 @@ if len(datasets) == 0:
 
 train_percent = int(os.environ["modal.state.samplePercentTrain"])
 test_percent = int(os.environ["modal.state.samplePercentTest"])
-
-# train_percent = 20
-# test_percent = 20
 
 sample_img_count = {'Train': round(6.7 * train_percent), 'Test': round(3.31 * test_percent)}
 
@@ -52,7 +44,7 @@ folder_name = 'detection'
 images_folder = 'images'
 anns_folder = 'masks'
 img_size = (1280, 720)
-batch_size = 3
+batch_size = 30
 class_name = 'apple'
 train_ds = 'Train'
 
