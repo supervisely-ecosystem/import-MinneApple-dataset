@@ -1,0 +1,34 @@
+<div>
+      <sly-card
+            class="mt15"
+            title="Choose datasets and sample percents:"
+    >
+          <sly-card>
+                <div>
+                <el-checkbox v-model="state.train" label="Train" style="margin: 0px 10px 10px 0"></el-checkbox>
+                </div>
+
+                <div v-if="(state.train).length === 1">{{ 4 * state.samplePercentTrain }} images will be import</div>
+
+                <div v-if="(state.train).length === 1">
+                  <sly-field title="Set sample (%) for train dataset" style="margin: 15px 10px 0 0">
+                  <el-slider v-model="state.samplePercentTrain" :min="1" :max="100" show-input></el-slider>
+                    </sly-field>
+                </div>
+          </sly-card>
+
+          <sly-card>
+                <el-checkbox v-model="state.test" label="Test" style="margin: 5px 10px 10px 0"></el-checkbox>
+
+                <div v-if="(state.test).length === 1">{{ Math.round(0.5 * state.samplePercentTest) }} images will be import</div>
+
+                <div  v-if="(state.test).length === 1">
+                  <sly-field title="Set sample (%) for test dataset" style="margin: 15px 10px 0 0">
+                  <el-slider v-model="state.samplePercentTest" :min="1" :max="100" show-input></el-slider>
+                    </sly-field>
+                </div>
+          </sly-card>
+
+      </sly-card>
+
+</div>
